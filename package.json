@@ -1,5 +1,5 @@
 {
-  "name": "khaosdoctor/logger.js",
+  "name": "@khaosdoctor/logger.js",
   "version": "1.0.0",
   "description": "Simple logging library for node",
   "main": "dist/log.js",
@@ -8,7 +8,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/khaosdoctor/logger.js.git"
+    "url": "git+https://github.com/khaosdoctor/logger.js.git",
+    "email": "lhs.santoss@gmail.com"
   },
   "keywords": [
     "logger.js",
