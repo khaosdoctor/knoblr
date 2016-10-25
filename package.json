@@ -18,7 +18,10 @@
     "node",
     "logging"
   ],
-  "author": "Lucas Santos <lhs.santoss@gmail.com>",
+  "author": "Lucas Santos <lhs.santoss@gmail.com> (http://khaosdoctor.github.io)",
+  "contributors": [
+    "Lucas Santos <lhs.santoss@gmail.com> (http://khaosdoctor.github.io)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/khaosdoctor/logger.js/issues"
