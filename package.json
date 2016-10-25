@@ -1,0 +1,41 @@
+{
+  "name": "logger.js",
+  "version": "1.0.0",
+  "description": "Simple logging library for node",
+  "main": "dist/log.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khaosdoctor/logger.js.git"
+  },
+  "keywords": [
+    "logger.js",
+    "log",
+    "logger",
+    "node",
+    "logging"
+  ],
+  "author": "Lucas Santos <lhs.santoss@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/khaosdoctor/logger.js/issues"
+  },
+  "homepage": "https://github.com/khaosdoctor/logger.js#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-util": "^3.0.7"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "moment": "^2.15.2"
+  },
+  "babel": {
+    "presets": ["es2015"],
+    "ignore": ["node_modules/"]
+  }
+}
