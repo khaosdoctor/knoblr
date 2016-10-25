@@ -1,5 +1,5 @@
 {
-  "name": "logger.js",
+  "name": "khaosdoctor/logger.js",
   "version": "1.0.0",
   "description": "Simple logging library for node",
   "main": "dist/log.js",
