@@ -1,4 +1,4 @@
-# logger.js
+# logger.js ![NodeJs Dependencies](https://david-dm.org/khaosdoctor/logger.js.svg)
 
  Logger JS is a simple logging library to help node developers.
 
