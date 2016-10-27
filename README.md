@@ -36,3 +36,86 @@
 
 ![Log output](assets/sc.png)
 
+### Customizing usage
+
+There are options to customize the output of the log, such as:
+
+- Datetime formats
+- Whether or not to display the timestamp
+- Displaying log type
+- Logging colors
+
+#### Datetime formats
+
+Knoblr uses [Moment.js](http://momentjs.com/) to issue times and formats, so all the Moment's formats will be compatible with Knoblr.
+
+> Refer to [this url](http://momentjs.com/docs/#/displaying/) to know more about formats.
+
+In order to set the time formats you can do:
+
+```js
+const log = require('knoblr');
+
+log.setTimeFormat("Your format Here");
+
+log.warn('This is a warn text with your timestamp');
+log.error('This is an error text with your timestamp');
+log.info('This is an info text with your timestamp');
+```
+
+The default time format is `YYYY-MM-DD HH:mm:ss` (In other words its `<4-digit year>/<2-digit month>/<2-digit-day> <24h hours>:<2-digit minutes>:<2-digit seconds>`).
+
+#### Displaying the timestamp
+
+You have the choice not to display the timestamp along with the log, just set:
+
+```js
+const log = require('knoblr');
+
+log.displayTimestamp(false);
+
+log.warn('This is a warn text without the timestamp');
+log.error('This is an error text without the timestamp');
+log.info('This is an info text without the timestamp');
+```
+
+#### Displaying log type
+
+Same as before, you can choose not to show `{WARN}`, `{INFO}` and `{ERROR}` texts during logs, for that to happen all you have to do is:
+
+```js
+const log = require('knoblr');
+
+log.displayLogType(false);
+
+log.warn('This is a warn text without the log type');
+log.error('This is an error text without the log type');
+log.info('This is an info text without the log type');
+```
+
+#### Log colors
+
+Knoblr uses [Chalk](https://github.com/chalk/chalk) as colorizer, so you can set an instance of chalk using Knoblr return implementation object.
+
+Knoblr exposes chalk as an instance so the you don't need to require it:
+
+```js
+const log = require("../dist/log.js");
+log.setLogColor('info', log.colors.green);
+log.setLogColor('warn', log.colors.cyan);
+log.setLogColor('error', log.colors.bgYellow);
+
+log.warn('This will be cyan');
+log.error('This will have an awesome yellow bg');
+log.info('This will be green');
+```
+
+#### Reset
+
+If you want to switch back to the original values just perform a `log.reset()`.
+
+> Check the [basetest file](tests/base.js) to get a glimpse of all commands.
+
+This will be the output of the tests:
+
+![Test output](./assets/basetest.png)
