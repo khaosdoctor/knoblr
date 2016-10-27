@@ -1,6 +1,6 @@
 {
   "name": "@khaosdoctor/logger.js",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Simple logging library for node",
   "main": "dist/log.js",
   "scripts": {
