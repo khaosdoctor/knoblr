@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "node"
+  - "6"
+  - "6.1"
+  - "5"
+  - "4"
+  - "iojs"
+before_script:
+  - npm i -g ava gulp nyc
+  - npm i
+  - npm i --only=dev
+  - npm test
+after_success: npm run coverage
+matrix:
+  allow_failures:
+    - node_js: "iojs"
