@@ -1,10 +1,12 @@
-# Knoblr ![NodeJs Dependencies](https://david-dm.org/khaosdoctor/knoblr.svg)
+# Knoblr 
+
+![NodeJs Dependencies](https://david-dm.org/khaosdoctor/knoblr.svg)
 
 > Knoblr is a simple logging library to help node developers.
 
 <!-- TOC -->
 
-- [Knoblr ![NodeJs Dependencies](https://david-dm.org/khaosdoctor/knoblr.svg)](#knoblr-nodejs-dependencieshttpsdavid-dmorgkhaosdoctorknoblrsvg)
+- [Knoblr](#knoblr)
   - [What is](#what-is)
   - [Installing](#installing)
   - [Using](#using)
