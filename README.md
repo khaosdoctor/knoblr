@@ -1,38 +1,55 @@
 # Knoblr ![NodeJs Dependencies](https://david-dm.org/khaosdoctor/knoblr.svg)
 
- Knoblr is a simple logging library to help node developers.
+> Knoblr is a simple logging library to help node developers.
 
- It basically adds a funcionality of displaying three tips of logs:
+<!-- TOC -->
 
- - Warns
- - Errors
- - Info
+- [Knoblr ![NodeJs Dependencies](https://david-dm.org/khaosdoctor/knoblr.svg)](#knoblr-nodejs-dependencieshttpsdavid-dmorgkhaosdoctorknoblrsvg)
+  - [What is](#what-is)
+  - [Installing](#installing)
+  - [Using](#using)
+    - [Customizing usage](#customizing-usage)
+      - [Datetime formats](#datetime-formats)
+      - [Displaying the timestamp](#displaying-the-timestamp)
+      - [Displaying log type](#displaying-log-type)
+      - [Log colors](#log-colors)
+      - [Reset](#reset)
 
- Very simple. And it comes along with a timestamp and color codes!
+<!-- /TOC -->
 
- ## Installing
+## What is
 
- Just do a `npm install --save knoblr`
+It basically adds a funcionality of displaying three tips of logs:
 
- ## Using
+- Warns
+- Errors
+- Info
 
- In your file require the logger:
+Very simple. And it comes along with a timestamp and color codes!
 
- ```js
- const log = require('knoblr');
- ```
+## Installing
 
- Then you can use like this:
+Just do a `npm install --save knoblr`
 
- ```js
- const log = require('knoblr');
+## Using
 
- log.warn('This is a warn text');
- log.error('This is an error text');
- log.info('This is an info text');
- ```
+In your file require the logger:
 
- This will be the output:
+```js
+const log = require('knoblr');
+```
+
+Then you can use like this:
+
+```js
+const log = require('knoblr');
+
+log.warn('This is a warn text');
+log.error('This is an error text');
+log.info('This is an info text');
+```
+
+This will be the output:
 
 ![Log output](assets/sc.png)
 
