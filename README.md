@@ -1,6 +1,6 @@
-# logger.js ![NodeJs Dependencies](https://david-dm.org/khaosdoctor/logger.js.svg)
+# Knoblr ![NodeJs Dependencies](https://david-dm.org/khaosdoctor/knoblr.svg)
 
- Logger JS is a simple logging library to help node developers.
+ Knoblr is a simple logging library to help node developers.
 
  It basically adds a funcionality of displaying three tips of logs:
 
@@ -12,20 +12,20 @@
 
  ## Installing
 
- Just do a `npm install --save khaosdoctor/logger.js`
+ Just do a `npm install --save knoblr`
 
  ## Using
 
  In your file require the logger:
 
  ```js
- const log = require('@khaosdoctor/logger.js');
+ const log = require('knoblr');
  ```
 
  Then you can use like this:
 
  ```js
- const log = require('@khaosdoctor/logger.js');
+ const log = require('knoblr');
 
  log.warn('This is a warn text');
  log.error('This is an error text');
