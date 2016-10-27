@@ -15,3 +15,7 @@ test('Removing log type', t => {
 test('Removing timestamp', t => {
   t.pass("Testing");
 });
+
+test('Resetting everything', t => {
+  t.pass("Testing");
+});
