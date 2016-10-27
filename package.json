@@ -1,5 +1,5 @@
 {
-  "name": "@khaosdoctor/logger.js",
+  "name": "knoblr",
   "version": "2.1.0",
   "description": "Simple logging library for node",
   "main": "dist/log.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/khaosdoctor/logger.js.git",
+    "url": "git+https://github.com/khaosdoctor/knoblr.git",
     "email": "lhs.santoss@gmail.com"
   },
   "keywords": [
@@ -16,7 +16,9 @@
     "log",
     "logger",
     "node",
-    "logging"
+    "logging",
+    "knoblr",
+    "Knoblr"
   ],
   "author": "Lucas Santos <lhs.santoss@gmail.com> (http://khaosdoctor.github.io)",
   "contributors": [
@@ -24,9 +26,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/khaosdoctor/logger.js/issues"
+    "url": "https://github.com/khaosdoctor/knoblr/issues"
   },
-  "homepage": "https://github.com/khaosdoctor/logger.js#readme",
+  "homepage": "https://github.com/khaosdoctor/knoblr#readme",
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-preset-es2015": "^6.18.0",
