@@ -21,17 +21,17 @@
 
 ## What is
 
-It basically adds a funcionality of displaying three tips of logs:
+It basically adds a funcionality of displaying three types of logs:
 
 - Warns
 - Errors
 - Info
 
-Very simple. And it comes along with a timestamp and color codes!
+Very simple. And it comes along with a timestamp, and color codes!
 
 ## Installing
 
-Just do a `npm install --save knoblr`
+Just perform a `npm install --save knoblr`
 
 ## Using
 
