@@ -10,12 +10,13 @@
   - [What is](#what-is)
   - [Installing](#installing)
   - [Using](#using)
-    - [Customizing usage](#customizing-usage)
-      - [Datetime formats](#datetime-formats)
-      - [Displaying the timestamp](#displaying-the-timestamp)
-      - [Displaying log type](#displaying-log-type)
-      - [Log colors](#log-colors)
-      - [Reset](#reset)
+    - [API](#api)
+  - [Customizing usage](#customizing-usage)
+    - [Datetime formats](#datetime-formats)
+    - [Displaying the timestamp](#displaying-the-timestamp)
+    - [Displaying log type](#displaying-log-type)
+    - [Log colors](#log-colors)
+    - [Reset](#reset)
 
 <!-- /TOC -->
 
@@ -55,7 +56,19 @@ This will be the output:
 
 ![Log output](assets/sc.png)
 
-### Customizing usage
+### API
+
+There's also an API to help developers get their error messages straight and format them as they please. All you need to do is set a second parameter to `true`:
+
+```js
+const log = require('knoblr');
+
+var warnString = log.warn('This is a warn text', true); //this will return a string instead
+var errorString = log.error('This is an error text', true); //this will return a string instead
+var infoString = log.info('This is an info text', true); //this will return a string instead
+```
+
+## Customizing usage
 
 There are options to customize the output of the log, such as:
 
@@ -64,7 +77,7 @@ There are options to customize the output of the log, such as:
 - Displaying log type
 - Logging colors
 
-#### Datetime formats
+### Datetime formats
 
 Knoblr uses [Moment.js](http://momentjs.com/) to issue times and formats, so all the Moment's formats will be compatible with Knoblr.
 
@@ -84,35 +97,35 @@ log.info('This is an info text with your timestamp');
 
 The default time format is `YYYY-MM-DD HH:mm:ss` (In other words its `<4-digit year>/<2-digit month>/<2-digit-day> <24h hours>:<2-digit minutes>:<2-digit seconds>`).
 
-#### Displaying the timestamp
+### Displaying the timestamp
 
 You have the choice not to display the timestamp along with the log, just set:
 
 ```js
 const log = require('knoblr');
 
-log.displayTimestamp(false);
+log.displayTimestamp = false;
 
 log.warn('This is a warn text without the timestamp');
 log.error('This is an error text without the timestamp');
 log.info('This is an info text without the timestamp');
 ```
 
-#### Displaying log type
+### Displaying log type
 
 Same as before, you can choose not to show `{WARN}`, `{INFO}` and `{ERROR}` texts during logs, for that to happen all you have to do is:
 
 ```js
 const log = require('knoblr');
 
-log.displayLogType(false);
+log.displayLogType = false;
 
 log.warn('This is a warn text without the log type');
 log.error('This is an error text without the log type');
 log.info('This is an info text without the log type');
 ```
 
-#### Log colors
+### Log colors
 
 Knoblr uses [Chalk](https://github.com/chalk/chalk) as colorizer, so you can set an instance of chalk using Knoblr return implementation object.
 
@@ -129,7 +142,7 @@ log.error('This will have an awesome yellow bg');
 log.info('This will be green');
 ```
 
-#### Reset
+### Reset
 
 If you want to switch back to the original values just perform a `log.reset()`.
 
