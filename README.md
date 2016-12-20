@@ -1,6 +1,6 @@
 # Knoblr
 
-![NodeJs Dependencies](https://david-dm.org/khaosdoctor/knoblr.svg) [![Coverage Status](https://coveralls.io/repos/github/khaosdoctor/knoblr/badge.svg?branch=master)](https://coveralls.io/github/khaosdoctor/knoblr?branch=master) [![Build Status](https://travis-ci.org/khaosdoctor/knoblr.svg?branch=master)](https://travis-ci.org/khaosdoctor/knoblr)
+![NodeJs Dependencies](https://david-dm.org/khaosdoctor/knoblr.svg) [![Coverage Status](https://coveralls.io/repos/github/khaosdoctor/knoblr/badge.svg?branch=master)](https://coveralls.io/github/khaosdoctor/knoblr?branch=master) [![Build Status](https://travis-ci.org/khaosdoctor/knoblr.svg?branch=master)](https://travis-ci.org/khaosdoctor/knoblr) [![Code Climate](https://codeclimate.com/github/khaosdoctor/knoblr/badges/gpa.svg)](https://codeclimate.com/github/khaosdoctor/knoblr)
 
 > Knoblr is a simple logging library to help node developers.
 
