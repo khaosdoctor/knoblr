@@ -9,10 +9,14 @@ let log_types = {
 };
 let now = chalk.italic('[' + moment().format(datetime_format) + '] => ');
 
-module.exports = {
-  "colors": chalk,
+const knoblr = {
+  //Properties
   displayTimestamp: true, //Sets Timestamp Flag
   displayLogType: true, //Sets flag to display log type
+  colors: chalk, //Return an instance of Chalk to select colors
+  currentLogColor: log_types, //Returns the current log colors
+
+  //Reset all the properties to the default values
   reset: () => {
     knoblr.displayLogType = true;
     knoblr.displayTimestamp = true;
@@ -24,33 +28,62 @@ module.exports = {
       "info": chalk.cyan
     };
   },
+
+  //Sets the text color
   setLogColor: (type, color) => {
     log_types[type] = color;
   },
+
+  //Sets the time format
   setTimeFormat: (f) => {
     datetime_format = f;
     now = chalk.italic('[' + moment().format(datetime_format) + '] => ');
   },
-  info: (t) => { 
-    return console.info(
-      log_types.info(t)
-    ); 
-  },
-  warn: (t) => { 
-    return console.warn(
-      ((display_timestamp) ? now : "") +
-      ((display_logtype) ? log_types.warn.bold('{WARN}: ') : "") +
-      log_types.warn(t)
-    ); 
+
+  //Main Functions
+  info: (t, asString) => {
+    asString = (typeof asString !== undefined) ? asString : false;
     let message = ((knoblr.displayTimestamp) ? now : "") +
       ((knoblr.displayLogType) ? log_types.info.bold('{INFO}: ') : "") +
+      log_types.info(t);
+    
+    //Checks if the user wants to return a variable instead
+    if (!asString) {
+      return console.info(message);
+    } else {
+      return message;
+    }
+
   },
-  error: (t) => { 
-    return console.error(
-      log_types.error(t)
-    ); 
+  warn: (t, asString) => {
+    asString = (typeof asString !== undefined) ? asString : false;
     let message = ((knoblr.displayTimestamp) ? now : "") +
       ((knoblr.displayLogType) ? log_types.warn.bold('{WARN}: ') : "") +
+      log_types.warn(t);
+    
+    //Checks if the user wants to return a variable instead
+    if (!asString) {
+      return console.warn(message);
+    } else {
+      return message;
+    }
+
   },
-}    let message = ((knoblr.displayTimestamp) ? now : "") +
+  error: (t, asString) => {
+    asString = (typeof asString !== undefined) ? asString : false;
+    let message = ((knoblr.displayTimestamp) ? now : "") +
       ((knoblr.displayLogType) ? log_types.error.bold('{ERROR}: ') : "") +
+      log_types.error(t);
+    
+    //Checks if the user wants to return a variable instead
+    if (!asString) {
+      return console.error(message);
+    } else {
+      return message;
+    }
+
+  }
+
+};
+
+module.exports = knoblr;
