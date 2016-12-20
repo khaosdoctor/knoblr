@@ -7,18 +7,15 @@ let log_types = {
   "error": chalk.red,
   "info": chalk.cyan
 };
-
-let display_logtype = true;
-let display_timestamp = true;
 let now = chalk.italic('[' + moment().format(datetime_format) + '] => ');
 
 module.exports = {
-  displayTimestamp: (v) => { display_timestamp = v; },
-  displayLogType: (v) => { display_logtype = v; },
   "colors": chalk,
+  displayTimestamp: true, //Sets Timestamp Flag
+  displayLogType: true, //Sets flag to display log type
   reset: () => {
-    display_logtype = true;
-    display_timestamp = true;
+    knoblr.displayLogType = true;
+    knoblr.displayTimestamp = true;
     datetime_format = 'YYYY-MM-DD HH:mm:ss';
     now = chalk.italic('[' + moment().format(datetime_format) + '] => ');
     log_types = {
@@ -36,8 +33,6 @@ module.exports = {
   },
   info: (t) => { 
     return console.info(
-      ((display_timestamp) ? now : "") +
-      ((display_logtype) ? log_types.info.bold('{INFO}: ') : "") +
       log_types.info(t)
     ); 
   },
@@ -47,12 +42,15 @@ module.exports = {
       ((display_logtype) ? log_types.warn.bold('{WARN}: ') : "") +
       log_types.warn(t)
     ); 
+    let message = ((knoblr.displayTimestamp) ? now : "") +
+      ((knoblr.displayLogType) ? log_types.info.bold('{INFO}: ') : "") +
   },
   error: (t) => { 
     return console.error(
-      ((display_timestamp) ? now : "") +
-      ((display_logtype) ? log_types.error.bold('{ERROR}: ') : "") +
       log_types.error(t)
     ); 
+    let message = ((knoblr.displayTimestamp) ? now : "") +
+      ((knoblr.displayLogType) ? log_types.warn.bold('{WARN}: ') : "") +
   },
-}
+}    let message = ((knoblr.displayTimestamp) ? now : "") +
+      ((knoblr.displayLogType) ? log_types.error.bold('{ERROR}: ') : "") +
