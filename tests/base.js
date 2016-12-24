@@ -20,10 +20,10 @@ display();
 
 console.log("======== Setting no time ========");
 log.reset();
-log.displayTimestamp(false);
+log.displayTimestamp = false;
 display();
 
 console.log("======== Setting no type ========");
 log.reset();
-log.displayLogType(false);
+log.displayLogType = false;
 display();
