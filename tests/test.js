@@ -19,9 +19,13 @@ test('Changing colors', t => {
   t.is(knoblr.currentLogColor.info(testString), '\u001b[36mFooBar\u001b[39m', "Colors match the preset?");
 });
 
-
-
-
+test('Testing output', t => {
+  knoblr.reset();
+  t.is(knoblr.error(testString), console.error(testString));
+  t.is(knoblr.warn(testString), console.warn(testString));
+  t.is(knoblr.info(testString), console.info(testString));
+});
+     
 test('Changing date format', t => {
 
   knoblr.reset();
