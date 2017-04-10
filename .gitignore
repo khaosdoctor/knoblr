@@ -6,6 +6,10 @@
 logs
 *.log
 npm-debug.log*
+yarn*
+
+# Coverage
+.nyc_output
 
 # Runtime data
 pids
