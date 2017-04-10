@@ -4,8 +4,8 @@
   "description": "Simple logging library for node",
   "main": "dist/log.js",
   "scripts": {
-    "test": "nyc ava ./tests/test.js",
-    "coverage": "nyc report --reporter=lcov | codecov"
+    "test": "nyc report --reporter lcov --reporter text ava ./tests/test.js",
+    "coverage": "cat ./coverage/lcov.info | codecov"
   },
   "repository": {
     "type": "git",
