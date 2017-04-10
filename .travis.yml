@@ -12,13 +12,9 @@ node_js:
   - "6.1"
   - "5"
   - "4"
-  - "iojs"
 before_script:
-  - npm i -g ava codecov nyc
-  - npm i --only=dev
+  - yarn global add ava codecov nyc
 script:
-  - npm run cover
-after_success: npm run report
-matrix:
-  allow_failures:
-    - node_js: "iojs"
+  - yarn run cover
+after_success: 
+  - yarn run report
