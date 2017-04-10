@@ -1,7 +1,11 @@
 os:
-  - osx
   - linux
 language: node_js
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
 node_js:
   - "node"
   - "6"
@@ -12,8 +16,9 @@ node_js:
 before_script:
   - npm i -g ava codecov nyc
   - npm i --only=dev
-  - npm test
-after_success: npm run coverage
+script:
+  - npm run cover
+after_success: npm run report
 matrix:
   allow_failures:
     - node_js: "iojs"
