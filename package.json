@@ -4,8 +4,8 @@
   "description": "Simple logging library for node",
   "main": "dist/log.js",
   "scripts": {
-    "cover": "nyc report --reporter lcov --reporter text npm run test",
-    "test": "ava ./tests/test.js",
+    "cover": "nyc report --reporter lcov --reporter text",
+    "test": "nyc ava ./tests/test.js",
     "report": "cat ./coverage/lcov.info | codecov"
   },
   "repository": {
@@ -35,6 +35,7 @@
     "ava": "^0.16.0",
     "babel-cli": "^6.18.0",
     "babel-preset-es2015": "^6.18.0",
+    "codecov": "^2.1.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-util": "^3.0.7",

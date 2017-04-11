@@ -13,8 +13,11 @@ node_js:
   - "5"
   - "4"
 before_script:
+  - rm -rf ./node_modules .yarnclean
+  - yarn cache clean
   - yarn global add ava codecov nyc
 script:
+  - yarn run test
   - yarn run cover
 after_success: 
   - yarn run report
