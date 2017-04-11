@@ -44,7 +44,7 @@ var knoblr = {
 
   //Main Functions
   info: function info(t, asString) {
-    asString = typeof asString == "string" ? asString : false;
+    asString = typeof asString == "boolean" ? asString : false;
     var message = (knoblr.displayTimestamp ? now : "") + (knoblr.displayLogType ? log_types.info.bold("{INFO}: ") : "") + log_types.info(t);
 
     //Checks if the user wants to return a variable instead
@@ -55,7 +55,7 @@ var knoblr = {
     }
   },
   warn: function warn(t, asString) {
-    asString = typeof asString == "string" ? asString : false;
+    asString = typeof asString == "boolean" ? asString : false;
     var message = (knoblr.displayTimestamp ? now : "") + (knoblr.displayLogType ? log_types.warn.bold("{WARN}: ") : "") + log_types.warn(t);
 
     //Checks if the user wants to return a variable instead
@@ -66,7 +66,7 @@ var knoblr = {
     }
   },
   error: function error(t, asString) {
-    asString = typeof asString == "string" ? asString : false;
+    asString = typeof asString == "boolean" ? asString : false;
     var message = (knoblr.displayTimestamp ? now : "") + (knoblr.displayLogType ? log_types.error.bold("{ERROR}: ") : "") + log_types.error(t);
 
     //Checks if the user wants to return a variable instead

@@ -42,7 +42,7 @@ const knoblr = {
 
   //Main Functions
   info: (t, asString) => {
-    asString = (typeof asString == "string") ? asString : false;
+    asString = (typeof asString == "boolean") ? asString : false;
     let message = ((knoblr.displayTimestamp) ? now : "") +
       ((knoblr.displayLogType) ? log_types.info.bold("{INFO}: ") : "") +
       log_types.info(t);
@@ -56,7 +56,7 @@ const knoblr = {
 
   },
   warn: (t, asString) => {
-    asString = (typeof asString == "string") ? asString : false;
+    asString = (typeof asString == "boolean") ? asString : false;
     let message = ((knoblr.displayTimestamp) ? now : "") +
       ((knoblr.displayLogType) ? log_types.warn.bold("{WARN}: ") : "") +
       log_types.warn(t);
@@ -70,7 +70,7 @@ const knoblr = {
 
   },
   error: (t, asString) => {
-    asString = (typeof asString == "string") ? asString : false;
+    asString = (typeof asString == "boolean") ? asString : false;
     let message = ((knoblr.displayTimestamp) ? now : "") +
       ((knoblr.displayLogType) ? log_types.error.bold("{ERROR}: ") : "") +
       log_types.error(t);
