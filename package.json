@@ -4,6 +4,7 @@
   "description": "Simple logging library for node",
   "main": "dist/log.js",
   "scripts": {
+    "build": "gulp default",
     "cover": "nyc report --reporter lcov --reporter text",
     "test": "nyc ava ./tests/test.js",
     "report": "cat ./coverage/lcov.info | codecov"
