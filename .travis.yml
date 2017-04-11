@@ -14,10 +14,10 @@ node_js:
   - "4"
 before_script:
   - rm -rf ./node_modules .yarnclean
-  - yarn cache clean
-  - yarn global add ava codecov nyc
+  - npm cache clean
+  - npm i -g ava codecov nyc
 script:
-  - yarn run test
-  - yarn run cover
+  - npm run test
+  - npm run cover
 after_success: 
-  - yarn run report
+  - npm run report
