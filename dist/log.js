@@ -1,17 +1,15 @@
-'use strict';
+"use strict";
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var moment = require("moment");
+var chalk = require("chalk");
 
-var moment = require('moment');
-var chalk = require('chalk');
-
-var datetime_format = 'YYYY-MM-DD HH:mm:ss';
+var datetime_format = "YYYY-MM-DD HH:mm:ss";
 var log_types = {
   "warn": chalk.yellow,
   "error": chalk.red,
   "info": chalk.cyan
 };
-var now = chalk.italic('[' + moment().format(datetime_format) + '] => ');
+var now = chalk.italic("[" + moment().format(datetime_format) + "] => ");
 
 var knoblr = {
   //Properties
@@ -24,8 +22,8 @@ var knoblr = {
   reset: function reset() {
     knoblr.displayLogType = true;
     knoblr.displayTimestamp = true;
-    datetime_format = 'YYYY-MM-DD HH:mm:ss';
-    now = chalk.italic('[' + moment().format(datetime_format) + '] => ');
+    datetime_format = "YYYY-MM-DD HH:mm:ss";
+    now = chalk.italic("[" + moment().format(datetime_format) + "] => ");
     log_types = {
       "warn": chalk.yellow,
       "error": chalk.red,
@@ -41,13 +39,13 @@ var knoblr = {
   //Sets the time format
   setTimeFormat: function setTimeFormat(f) {
     datetime_format = f;
-    now = chalk.italic('[' + moment().format(datetime_format) + '] => ');
+    now = chalk.italic("[" + moment().format(datetime_format) + "] => ");
   },
 
   //Main Functions
   info: function info(t, asString) {
-    asString = (typeof asString === 'undefined' ? 'undefined' : _typeof(asString)) !== undefined ? asString : false;
-    var message = (knoblr.displayTimestamp ? now : "") + (knoblr.displayLogType ? log_types.info.bold('{INFO}: ') : "") + log_types.info(t);
+    asString = typeof asString == "boolean" ? asString : false;
+    var message = (knoblr.displayTimestamp ? now : "") + (knoblr.displayLogType ? log_types.info.bold("{INFO}: ") : "") + log_types.info(t);
 
     //Checks if the user wants to return a variable instead
     if (!asString) {
@@ -57,8 +55,8 @@ var knoblr = {
     }
   },
   warn: function warn(t, asString) {
-    asString = (typeof asString === 'undefined' ? 'undefined' : _typeof(asString)) !== undefined ? asString : false;
-    var message = (knoblr.displayTimestamp ? now : "") + (knoblr.displayLogType ? log_types.warn.bold('{WARN}: ') : "") + log_types.warn(t);
+    asString = typeof asString == "boolean" ? asString : false;
+    var message = (knoblr.displayTimestamp ? now : "") + (knoblr.displayLogType ? log_types.warn.bold("{WARN}: ") : "") + log_types.warn(t);
 
     //Checks if the user wants to return a variable instead
     if (!asString) {
@@ -68,8 +66,8 @@ var knoblr = {
     }
   },
   error: function error(t, asString) {
-    asString = (typeof asString === 'undefined' ? 'undefined' : _typeof(asString)) !== undefined ? asString : false;
-    var message = (knoblr.displayTimestamp ? now : "") + (knoblr.displayLogType ? log_types.error.bold('{ERROR}: ') : "") + log_types.error(t);
+    asString = typeof asString == "boolean" ? asString : false;
+    var message = (knoblr.displayTimestamp ? now : "") + (knoblr.displayLogType ? log_types.error.bold("{ERROR}: ") : "") + log_types.error(t);
 
     //Checks if the user wants to return a variable instead
     if (!asString) {
