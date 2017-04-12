@@ -154,3 +154,9 @@ If you want to switch back to the original values just perform a `log.reset()`.
 This will be the output of the tests:
 
 ![Test output](./assets/basetest.png)
+
+# License
+
+MIT @ [Lucas Santos](http://lsantos.me)
+
+> Please note that this project is released with a [Contributor Code of Conduct](code-of-conduct.md). By participating in this project you agree to abide by its terms.
