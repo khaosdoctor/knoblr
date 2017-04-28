@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/khaosdoctor/knoblr/tree/HEAD)
-
-[Full Changelog](https://github.com/khaosdoctor/knoblr/compare/v2.3.0...HEAD)
+## [v2.3.2](https://github.com/khaosdoctor/knoblr/tree/v2.3.2) (2017-04-28)
+[Full Changelog](https://github.com/khaosdoctor/knoblr/compare/v2.3.0...v2.3.2)
 
 **Fixed bugs:**
 
