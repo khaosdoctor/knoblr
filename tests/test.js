@@ -1,7 +1,7 @@
 import test from "ava";
-let knoblr = require("../dist/log.js");
-let moment = require("moment");
-let chalk = require("chalk");
+const knoblr = require("../dist/log.js");
+const moment = require("moment");
+const chalk = require("chalk");
 
 let testString = "FooBar";
 let timeFormat = "DD/MM/YYYY hh:mm a";
