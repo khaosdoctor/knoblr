@@ -11,6 +11,13 @@ var log_types = {
 };
 var now = chalk.italic("[" + moment().format(datetime_format) + "] => ");
 
+// Creates final message
+function assembleMessage(type, text, asString, displayTimestamp, displayLogType) {
+  asString = typeof asString == "boolean" ? asString : false;
+  var message = (displayTimestamp ? now : "") + (displayLogType ? log_types[type].bold("{" + type.toUpperCase() + "}: ") : "") + log_types[type](text);
+  return message;
+}
+
 var knoblr = {
   //Properties
   displayTimestamp: true, //Sets Timestamp Flag
@@ -44,37 +51,21 @@ var knoblr = {
 
   //Main Functions
   info: function info(t, asString) {
-    asString = typeof asString == "boolean" ? asString : false;
-    var message = (knoblr.displayTimestamp ? now : "") + (knoblr.displayLogType ? log_types.info.bold("{INFO}: ") : "") + log_types.info(t);
+    var message = assembleMessage("info", t, asString, knoblr.displayTimestamp, knoblr.displayLogType);
 
     //Checks if the user wants to return a variable instead
-    if (!asString) {
-      return console.info(message);
-    } else {
-      return message;
-    }
+    return !asString ? console.info(message) : message;
   },
   warn: function warn(t, asString) {
-    asString = typeof asString == "boolean" ? asString : false;
-    var message = (knoblr.displayTimestamp ? now : "") + (knoblr.displayLogType ? log_types.warn.bold("{WARN}: ") : "") + log_types.warn(t);
+    var message = assembleMessage("warn", t, asString, knoblr.displayTimestamp, knoblr.displayLogType);
 
     //Checks if the user wants to return a variable instead
-    if (!asString) {
-      return console.warn(message);
-    } else {
-      return message;
-    }
+    return !asString ? console.warn(message) : message;
   },
   error: function error(t, asString) {
-    asString = typeof asString == "boolean" ? asString : false;
-    var message = (knoblr.displayTimestamp ? now : "") + (knoblr.displayLogType ? log_types.error.bold("{ERROR}: ") : "") + log_types.error(t);
-
+    var message = assembleMessage("error", t, asString, knoblr.displayTimestamp, knoblr.displayLogType);
     //Checks if the user wants to return a variable instead
-    if (!asString) {
-      return console.error(message);
-    } else {
-      return message;
-    }
+    return !asString ? console.error(message) : message;
   }
 
 };

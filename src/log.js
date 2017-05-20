@@ -7,7 +7,16 @@ let log_types = {
   "error": chalk.red,
   "info": chalk.cyan
 };
-let now = chalk.italic("[" + moment().format(datetime_format) + "] => ");
+let now = chalk.italic(`[${moment().format(datetime_format)}] => `);
+
+// Creates final message
+function assembleMessage(type, text, asString, displayTimestamp, displayLogType) {
+    asString = (typeof asString == "boolean") ? asString : false;
+    let message = ((displayTimestamp) ? now : "") +
+      ((displayLogType) ? log_types[type].bold(`{${type.toUpperCase()}}: `) : "") +
+      log_types[type](text);
+    return message;
+}
 
 const knoblr = {
   //Properties
@@ -21,7 +30,7 @@ const knoblr = {
     knoblr.displayLogType = true;
     knoblr.displayTimestamp = true;
     datetime_format = "YYYY-MM-DD HH:mm:ss";
-    now = chalk.italic("[" + moment().format(datetime_format) + "] => ");
+    now = chalk.italic(`[${moment().format(datetime_format)}] => `);
     log_types = {
       "warn": chalk.yellow,
       "error": chalk.red,
@@ -37,50 +46,27 @@ const knoblr = {
   //Sets the time format
   setTimeFormat: (f) => {
     datetime_format = f;
-    now = chalk.italic("[" + moment().format(datetime_format) + "] => ");
+    now = chalk.italic(`[${moment().format(datetime_format)}] => `);
   },
 
   //Main Functions
   info: (t, asString) => {
-    asString = (typeof asString == "boolean") ? asString : false;
-    let message = ((knoblr.displayTimestamp) ? now : "") +
-      ((knoblr.displayLogType) ? log_types.info.bold("{INFO}: ") : "") +
-      log_types.info(t);
+    let message = assembleMessage("info", t, asString, knoblr.displayTimestamp, knoblr.displayLogType);
     
     //Checks if the user wants to return a variable instead
-    if (!asString) {
-      return console.info(message);
-    } else {
-      return message;
-    }
-
+    return (!asString) ? console.info(message) : message;
   },
   warn: (t, asString) => {
-    asString = (typeof asString == "boolean") ? asString : false;
-    let message = ((knoblr.displayTimestamp) ? now : "") +
-      ((knoblr.displayLogType) ? log_types.warn.bold("{WARN}: ") : "") +
-      log_types.warn(t);
+    let message = assembleMessage("warn", t, asString, knoblr.displayTimestamp, knoblr.displayLogType);
     
     //Checks if the user wants to return a variable instead
-    if (!asString) {
-      return console.warn(message);
-    } else {
-      return message;
-    }
+    return (!asString) ? console.warn(message) : message;
 
   },
   error: (t, asString) => {
-    asString = (typeof asString == "boolean") ? asString : false;
-    let message = ((knoblr.displayTimestamp) ? now : "") +
-      ((knoblr.displayLogType) ? log_types.error.bold("{ERROR}: ") : "") +
-      log_types.error(t);
-    
+    let message = assembleMessage("error", t, asString, knoblr.displayTimestamp, knoblr.displayLogType);
     //Checks if the user wants to return a variable instead
-    if (!asString) {
-      return console.error(message);
-    } else {
-      return message;
-    }
+    return (!asString) ? console.error(message) : message;
 
   }
 
