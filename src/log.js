@@ -46,7 +46,7 @@ const knoblr = {
   //Sets the time format
   setTimeFormat: (f) => {
     datetime_format = f;
-    now = chalk.italic("[" + moment().format(datetime_format) + "] => ");
+    now = chalk.italic(`[${moment().format(datetime_format)}] => `);
   },
 
   //Main Functions
