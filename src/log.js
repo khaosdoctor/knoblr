@@ -7,7 +7,7 @@ let log_types = {
   "error": chalk.red,
   "info": chalk.cyan
 };
-let now = chalk.italic("[" + moment().format(datetime_format) + "] => ");
+let now = chalk.italic(`[${moment().format(datetime_format)}] => `);
 
 // Creates final message
 function assembleMessage(type, text, asString, displayTimestamp, displayLogType) {
@@ -30,7 +30,7 @@ const knoblr = {
     knoblr.displayLogType = true;
     knoblr.displayTimestamp = true;
     datetime_format = "YYYY-MM-DD HH:mm:ss";
-    now = chalk.italic("[" + moment().format(datetime_format) + "] => ");
+    now = chalk.italic(`[${moment().format(datetime_format)}] => `);
     log_types = {
       "warn": chalk.yellow,
       "error": chalk.red,

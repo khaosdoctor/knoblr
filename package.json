@@ -9,7 +9,7 @@
     "test": "nyc ava ./tests/test.js",
     "report": "cat ./coverage/lcov.info | codecov"
   },
-  "pre-commit": ["test","cover"],
+  "pre-commit": ["test"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/khaosdoctor/knoblr.git",
