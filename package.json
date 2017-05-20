@@ -9,6 +9,7 @@
     "test": "nyc ava ./tests/test.js",
     "report": "cat ./coverage/lcov.info | codecov"
   },
+  "pre-commit": ["test","cover"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/khaosdoctor/knoblr.git",
@@ -40,7 +41,8 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-util": "^3.0.7",
-    "nyc": "^10.2.0"
+    "nyc": "^10.2.0",
+    "pre-commit": "^1.2.2"
   },
   "dependencies": {
     "chalk": "^1.1.3",
