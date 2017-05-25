@@ -1,5 +1,16 @@
 # Change Log
 
+## [v2.3.3](https://github.com/khaosdoctor/knoblr/tree/v2.3.3) (2017-05-20)
+[Full Changelog](https://github.com/khaosdoctor/knoblr/compare/v2.3.2...v2.3.3)
+
+**Implemented enhancements:**
+
+- Remove duplicated code [\#3](https://github.com/khaosdoctor/knoblr/issues/3)
+
+**Merged pull requests:**
+
+- Remove complexity [\#4](https://github.com/khaosdoctor/knoblr/pull/4) ([khaosdoctor](https://github.com/khaosdoctor))
+
 ## [v2.3.2](https://github.com/khaosdoctor/knoblr/tree/v2.3.2) (2017-04-28)
 [Full Changelog](https://github.com/khaosdoctor/knoblr/compare/v2.3.0...v2.3.2)
 
