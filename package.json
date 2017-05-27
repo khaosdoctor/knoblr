@@ -1,12 +1,12 @@
 {
   "name": "knoblr",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "Simple logging library for node",
   "main": "dist/log.js",
   "scripts": {
     "build": "gulp default",
     "cover": "nyc report --reporter lcov --reporter text",
-    "test": "nyc ava --color -v -T 2000 ./tests/test.js",
+    "test": "nyc ava --color -v ./tests/test.js",
     "report": "cat ./coverage/lcov.info | codecov"
   },
   "pre-commit": ["test"],
