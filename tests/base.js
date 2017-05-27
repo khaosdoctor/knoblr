@@ -1,9 +1,16 @@
 const log = require('../dist/log.js')
 
 const display = function () {
+  const obj = {
+    message: 'This is a random message'
+  }
   log.info('Displaying info text')
   log.warn('Displaying warn text')
   log.error('Displaying error text')
+
+  log.info(obj)
+  log.warn(obj)
+  log.error(obj)
 }
 
 console.log('======== Changing colors ========')

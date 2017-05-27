@@ -1,5 +1,5 @@
 import test from 'ava'
-const knoblr = require('../dist/log.js')
+const knoblr = require('../src/log.js')
 const moment = require('moment')
 const chalk = require('chalk')
 
@@ -100,4 +100,20 @@ test('String test', (t) => {
   t.is(knoblr.info(testString, true), '\u001b[36mFooBar\u001b[39m', 'Is it printing the correct info string?')
   t.is(knoblr.warn(testString, true), '\u001b[33mFooBar\u001b[39m', 'Is it printing the correct warn string?')
   t.is(knoblr.error(testString, true), '\u001b[31mFooBar\u001b[39m', 'Is it printing the correct error string?')
+})
+
+test('Display Object', (t) => {
+  t.plan(6)
+
+  let obj = {
+    anAttribute: 'a value',
+    anotherAttribute: 12
+  }
+
+  t.regex(knoblr.info(obj, true), /anAttribute/)
+  t.regex(knoblr.info(obj, true), /anotherAttribute/)
+  t.regex(knoblr.error(obj, true), /anAttribute/)
+  t.regex(knoblr.error(obj, true), /anotherAttribute/)
+  t.regex(knoblr.warn(obj, true), /anAttribute/)
+  t.regex(knoblr.warn(obj, true), /anotherAttribute/)
 })
