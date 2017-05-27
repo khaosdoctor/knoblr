@@ -12,9 +12,12 @@ let now = chalk.italic(`[${moment().format(datetime_format)}] => `)
 // Creates final message
 function assembleMessage (type, text, asString, displayTimestamp, displayLogType) {
   asString = (typeof asString === 'boolean') ? asString : false
+  text = (typeof text === 'object') ? JSON.stringify(text, null, 2) : text
+
   let message = ((displayTimestamp) ? now : '') +
       ((displayLogType) ? log_types[type].bold(`{${type.toUpperCase()}}: `) : '') +
-      log_types[type](text)
+    log_types[type](text)
+
   return message
 }
 
