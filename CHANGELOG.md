@@ -1,5 +1,12 @@
 # Change Log
 
+## [v2.4.0](https://github.com/khaosdoctor/knoblr/tree/v2.4.0) (2017-05-27)
+[Full Changelog](https://github.com/khaosdoctor/knoblr/compare/v2.3.3...v2.4.0)
+
+**Implemented enhancements:**
+
+- Print full object [\#5](https://github.com/khaosdoctor/knoblr/issues/5)
+
 ## [v2.3.3](https://github.com/khaosdoctor/knoblr/tree/v2.3.3) (2017-05-20)
 [Full Changelog](https://github.com/khaosdoctor/knoblr/compare/v2.3.2...v2.3.3)
 
