@@ -1,19 +1,16 @@
 os:
   - linux
+  - osx
 language: node_js
-cache:
-  directories:
-    - node_modules
 notifications:
   email: false
 node_js:
   - "node"
-  - "6"
+  - "7.1"
   - "6.1"
 before_script:
   - npm i -g ava codecov nyc
   - npm i
-  - npm i --only=dev
   - npm run build
 script:
   - npm run test
